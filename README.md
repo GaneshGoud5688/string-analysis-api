@@ -2,8 +2,6 @@
 
 A FastAPI-based API that accepts string inputs (either raw plain text or JSON with a `"text"` field) and performs a variety of text analyses. Users specify which analyses to perform via query parameters.
 
----
-
 ## Table of Contents
 
 - [Overview](#overview)
@@ -12,19 +10,10 @@ A FastAPI-based API that accepts string inputs (either raw plain text or JSON wi
 - [API Endpoint](#api-endpoint)
 - [Request Formats](#request-formats)
 - [Query Parameters](#query-parameters)
-- [Response](#response)
-- [Error Handling](#error-handling)
-- [Setup and Installation](#setup-and-installation)
-- [Logging](#logging)
-- [License](#license)
-
----
 
 ## Overview
 
 The String Analysis API allows clients to submit text strings for detailed analysis. The API supports both plain text and JSON input formats and provides flexible options for selecting which analyses to perform on the input text.
-
----
 
 ## Features
 
@@ -33,8 +22,6 @@ The String Analysis API allows clients to submit text strings for detailed analy
 - Limits input size to prevent overly large requests (configurable)
 - Provides clear error messages and status codes
 - Logs requests, errors, and internal operations
-
----
 
 ## Supported Analyses
 
@@ -50,8 +37,6 @@ Clients can request any combination of the following analyses via the `analyses`
 - `digit_count` — Count of digit characters
 - `special_char_count` — Count of special characters (non-alphanumeric)
 
----
-
 ## API Endpoint
 
 ### `POST /analyze`
@@ -66,11 +51,9 @@ Example: `POST /analyze?analyses=word_count&analyses=char_count`
 
 #### Request Body
 
-Accepts either:
+Accepts either JSON with the structure:
 
-- **JSON** with the structure:
-
-  ```json
-  {
-    "text": "Your input string here."
-  }
+```json
+{
+  "text": "Your input string here."
+}
